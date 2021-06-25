@@ -1,8 +1,8 @@
 <div class="container">
   <h2>Payment Form</h2>
+  <form class="col s12">
 
   <div class="row">
-    <form class="col s12">
       <div class="input-field col s3">
         <input
           id="name2"
@@ -19,11 +19,9 @@
           <b>{{ name | titlecase }}</b>
         </div>
       </div>
-    </form>
   </div>
 
   <div class="row">
-    <form class="col s12">
       <div class="input-field col s3">
         <input
           id="name2"
@@ -40,8 +38,26 @@
           <b>{{ date | date: 'longDate' }}</b>
         </div>
       </div>
-    </form>
   </div>
 
+  <div class="row">
+      <div class="input-field col s3">
+        <input
+          id="name2"
+          class="validate"
+          (input)="onAmountChange($any($event.target).value)"
+        />
+        <label class="active" for="name2">Payment Amount:</label>
+      </div>
+
+      <div class="input-field col s3">
+        <label class="active">Amount:</label>
+        <div>
+          <b>{{ amount | currency }}</b>
+        </div>
+      </div>
+  </div>
+
+</form>
 
 </div>
